@@ -1,0 +1,17 @@
+{
+  "name": "syncronix-grounded-agent-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal grounded web-research agent with Claude, web search and web fetch.",
+  "scripts": {
+    "start": "node agent.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0"
+  },
+  "license": "MIT"
+}

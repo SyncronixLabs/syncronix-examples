@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.*
+.syncronix-session
+session.txt
+package-lock.json
