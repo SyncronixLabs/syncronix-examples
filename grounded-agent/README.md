@@ -17,5 +17,5 @@ Each run is billed to your Anthropic account; with `claude-sonnet-5-5` typical r
 `AI_MODEL` to use another model that supports these tools.
 
 What the production agent adds: streaming progress events, a per-run cost ceiling, source verification against
-search results, persistence and the public-beta limits. See
+search results, persistence and the usage limits. See
 [docs/research-agent.md](https://github.com/SyncronixLabs/syncronix-docs/blob/main/research-agent.md).

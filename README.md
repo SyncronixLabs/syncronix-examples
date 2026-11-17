@@ -92,7 +92,7 @@ You've used today's free run. It resets at 00:00 UTC; `node quota.mjs` shows the
 <details>
 <summary><code>Not started (503 busy)</code></summary>
 
-The public beta runs one research task at a time across all visitors. Try again in a minute.
+SYNCRONIX runs one research task at a time across all visitors. Try again in a minute.
 
 </details>
 

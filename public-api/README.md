@@ -1,7 +1,7 @@
 # Public API examples
 
 Node.js 18+ (built-in `fetch`), no dependencies. Target: `https://syncronixai.xyz` (set `SYNCRONIX_BASE` to use a
-self-hosted instance). The free public beta allows **one research run per visitor per day**.
+self-hosted instance). The free service allows **one research run per visitor per day**.
 
 ```bash
 node quota.mjs                       # can I start a run now?

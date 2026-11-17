@@ -1,6 +1,6 @@
 // Starts a research run and prints its live progress, then the report.
 //   node run.mjs "What is the current Node.js Active LTS line and when does it reach end of life?"
-// The public beta allows one run per visitor per day.
+// The free service allows one run per visitor per day.
 import { BASE, headers, saveCookie, events } from "./client.mjs";
 
 const task = process.argv.slice(2).join(" ").trim();
