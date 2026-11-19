@@ -5,7 +5,7 @@
 <h1 align="center">SYNCRONIX Examples</h1>
 
 <p align="center">
-  Working code for the SYNCRONIX Research Agent: call the public API, or build the grounded research pattern yourself.<br>
+  Working code for SYNCRONIX: call the research API, look up wallets, or build the grounded research pattern yourself.<br>
   <a href="https://syncronixai.xyz">Website</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs/blob/main/api.md">API reference</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs">Docs</a>
 </p>
 
@@ -16,6 +16,7 @@
 | | Example | What it shows | Needs | Cost |
 |---|---|---|---|---|
 | 🔌 | [**public-api**](public-api/) | Start a run on syncronixai.xyz, stream its progress, check your quota, read your private history; plus curl | Node.js 18+, no dependencies | Free (1 run per day) |
+| 🔎 | [**wallet**](wallet/) | Wallet Intelligence: activity, first funder, 5-hop funding trace, shared funder, compare, verified vs. inferred graph edges, AI cost estimate | Node.js 18+, no dependencies | Free, no AI call |
 | 🧠 | [**grounded-agent**](grounded-agent/) | The core research pattern in one file: Claude + web search + web fetch with citations, a read gate and a grounding check | Node.js 18+, an Anthropic API key | Billed to your Anthropic account |
 
 ## Quick start
@@ -46,6 +47,21 @@ run 3f2c…
 ```
 
 *Illustrative output; your run's sources and wording will differ.*
+
+</details>
+
+<details>
+<summary><b>Wallet Intelligence</b> — no key, no AI</summary>
+
+```bash
+cd wallet
+node wallet.mjs 0x…              # a Robinhood Chain mainnet address
+node wallet.mjs 0x… --testnet
+```
+
+Prints activity, the funding path with an evidence label on every hop (`verified by rpc`, `proven first inflow`
+or `earliest found`), any shared funder marked **INFERRED**, and the AI cost estimate. It never starts a paid
+analysis. See [wallet/README.md](wallet/README.md) for a full real run.
 
 </details>
 
@@ -108,6 +124,14 @@ The shared daily budget is used up. Runs resume at 00:00 UTC.
 
 History is private to the session that created it. `run.mjs` saves that session in `public-api/.syncronix-session`;
 deleting the file starts a new, empty session.
+
+</details>
+
+<details>
+<summary><code>429 rate_limited</code> or <code>503 busy</code> from <code>wallet.mjs</code></summary>
+
+Wallet lookups allow 30 requests and 6 funding traces per minute per visitor, and 3 traces at once across the
+service. Wait for the `Retry-After` seconds shown and run it again.
 
 </details>
 
