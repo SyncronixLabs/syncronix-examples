@@ -6,7 +6,7 @@
 
 <p align="center">
   Working code for SYNCRONIX: call the research API, look up wallets, or build the grounded research pattern yourself.<br>
-  <a href="https://syncronixai.xyz">Website</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs/blob/main/api.md">API reference</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs">Docs</a>
+  <a href="https://syncronixai.xyz">Website</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs/blob/main/api.md">API reference</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs">Docs</a> · <a href="https://github.com/SyncronixLabs/syncronix-docs/blob/main/whitepaper.md">Whitepaper</a> · <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 ---
@@ -141,5 +141,7 @@ service. Wait for the `Retry-After` seconds shown and run it again.
 `ANTHROPIC_API_KEY` is missing or invalid in the shell that runs `agent.mjs`.
 
 </details>
+
+History: [CHANGELOG.md](CHANGELOG.md) · Security: [SECURITY.md](SECURITY.md)
 
 <sub>Licensed under the [MIT License](LICENSE).</sub>
