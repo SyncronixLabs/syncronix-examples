@@ -17,6 +17,7 @@
 |---|---|---|---|---|
 | 🔌 | [**public-api**](public-api/) | Start a run on syncronixai.xyz, stream its progress, check your quota, read your private history; plus curl | Node.js 18+, no dependencies | Free (1 run per day) |
 | 🔎 | [**wallet**](wallet/) | Wallet Intelligence: activity, first funder, 5-hop funding trace, shared funder, compare, verified vs. inferred graph edges, AI cost estimate | Node.js 18+, no dependencies | Free, no AI call |
+| 💸 | [**transfer**](transfer/) | Wallet-approved transfers: get the server preview (checks, gas, fee, total) and the exact wallet request; check any transaction's receipt against what you expected | Node.js 18+, no dependencies | Free; never signs or sends |
 | 🧠 | [**grounded-agent**](grounded-agent/) | The core research pattern in one file: Claude + web search + web fetch with citations, a read gate and a grounding check | Node.js 18+, an Anthropic API key | Billed to your Anthropic account |
 
 ## Quick start
@@ -62,6 +63,21 @@ node wallet.mjs 0x… --testnet
 Prints activity, the funding path with an evidence label on every hop (`verified by rpc`, `proven first inflow`
 or `earliest found`), any shared funder marked **INFERRED**, and the AI cost estimate. It never starts a paid
 analysis. See [wallet/README.md](wallet/README.md) for a full real run.
+
+</details>
+
+<details>
+<summary><b>Wallet transfer preview and receipt</b> — read-only, never sends</summary>
+
+```bash
+cd transfer
+node preview.mjs --from 0x… "Send 0.001 ETH to 0x…"     # server preview + the wallet request (not sent)
+node receipt.mjs 0x<tx hash> --from 0x… --to 0x… --value 0.001
+```
+
+Prints the preview's gas estimate, `+20 %` gas limit, `2 ×` fee cap and total, then the exact `eth_sendTransaction`
+request the platform page hands to your wallet after you confirm. `receipt.mjs` reads the official RPC directly.
+See [transfer/README.md](transfer/README.md) for real output.
 
 </details>
 
