@@ -4,6 +4,7 @@ Examples added or changed in this repository, newest first. Dates are UTC.
 
 ## 2026-11-21
 
+- Added the official $SNX contract address (Robinhood Chain mainnet) to the README.
 - Added [transfer](transfer/): `preview.mjs` gets a read-only transfer preview from the public API and prints the exact
   wallet request; `receipt.mjs` checks a transaction's receipt on the official RPC against what you expected. Neither
   signs or sends. Tested against production and the official RPC on mainnet and testnet.
